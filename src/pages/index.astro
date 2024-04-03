@@ -1,20 +1,15 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
 import { getUsers } from '../actions/users';
 
 const users = await getUsers();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1 class="text-2xl">Astro Template</h1>
-    <h2 class="text-lg">Sample Data</h2>
-    <pre>{JSON.stringify(users, null, 2)}</pre>
-  </body>
-</html>
+<MainLayout>
+  <h1 class="text-2xl">
+    <i class="fa fa-user-astronaut"></i>
+    Astro Template
+  </h1>
+  <h2 class="text-lg">Sample Data</h2>
+  <pre>{JSON.stringify(users, null, 2)}</pre>
+</MainLayout>
